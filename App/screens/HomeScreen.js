@@ -1,10 +1,13 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+
+import Typo from '../components/Typo';
 
 const HomeScreen = () => {
   return (
     <View>
-      <Text>Welcome</Text>
+      <Typo variant="h1">Explore</Typo>
+      <Typo variant="h1">all sights</Typo>
     </View>
   );
 };
