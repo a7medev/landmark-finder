@@ -1,15 +1,18 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
 
-import Colors from '../theme/Colors';
+import useColors from '../theme/Colors';
 
-const Typo = ({ children, color = 'black', variant }) => {
+const Typo = ({ children, color = 'black', variant, style }) => {
+  const colors = useColors();
+
   return (
     <Text
       style={[
         styles.base,
         variant && styles[variant],
-        { color: Colors[color] }
+        { color: colors[color] },
+        style
       ]}
     >
       {children}
