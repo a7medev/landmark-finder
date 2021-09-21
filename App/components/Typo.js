@@ -22,10 +22,15 @@ const Typo = ({ children, color = 'black', variant, style }) => {
 
 const styles = StyleSheet.create({
   base: {
-    fontFamily: 'regular'
+    fontFamily: 'regular',
+    fontSize: 16
   },
   h1: {
     fontSize: 32,
+    fontFamily: 'bold'
+  },
+  h2: {
+    fontSize: 20,
     fontFamily: 'bold'
   }
 });
