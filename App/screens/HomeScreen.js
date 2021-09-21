@@ -1,15 +1,34 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import IconBox from '../components/IconBox';
 
 import Typo from '../components/Typo';
+import Spacing from '../theme/Spacing';
 
 const HomeScreen = () => {
   return (
-    <View>
-      <Typo variant="h1">Explore</Typo>
-      <Typo variant="h1">all sights</Typo>
-    </View>
+    <SafeAreaView style={styles.screen}>
+      <View style={styles.header}>
+        <Typo variant="h1">
+          Explore{'\n'}
+          all sights
+        </Typo>
+
+        <IconBox name="map-outline" />
+      </View>
+    </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  screen: {
+    padding: Spacing.screen
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  }
+});
 
 export default HomeScreen;
