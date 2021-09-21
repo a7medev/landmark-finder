@@ -11,7 +11,7 @@ const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.screen}>
       <View style={styles.header}>
-        <Typo variant="h1">
+        <Typo variant="h1" style={styles.headline}>
           Explore{'\n'}
           all sights
         </Typo>
@@ -32,6 +32,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 20
+  },
+  headline: {
+    lineHeight: 40
   }
 });
 
