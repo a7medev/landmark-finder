@@ -4,11 +4,16 @@ import { Ionicons } from '@expo/vector-icons';
 
 import useColors from '../theme/Colors';
 
-const IconBox = ({ name, color }) => {
+const IconBox = ({ name, color, focused = true }) => {
   const colors = useColors();
 
   return (
-    <View style={[styles.box, { backgroundColor: colors.light }]}>
+    <View
+      style={[
+        styles.box,
+        { backgroundColor: focused ? colors.light : colors.white }
+      ]}
+    >
       <Ionicons name={name} size={24} color={colors[color]} />
     </View>
   );

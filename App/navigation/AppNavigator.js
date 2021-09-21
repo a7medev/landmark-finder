@@ -1,13 +1,12 @@
 import React, { useMemo } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import HomeScreen from '../screens/HomeScreen';
+import HomeNavigator from './HomeNavigator';
 import useColors from '../theme/Colors';
+import IconBox from '../components/IconBox';
 
-const Stack = createNativeStackNavigator();
-
-const options = { headerShown: false };
+const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => {
   const colors = useColors();
@@ -29,9 +28,69 @@ const AppNavigator = () => {
 
   return (
     <NavigationContainer theme={theme}>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} options={options} />
-      </Stack.Navigator>
+      <Tab.Navigator
+        screenOptions={{
+          headerShown: false,
+          tabBarShowLabel: false,
+          tabBarStyle: { height: 70 }
+        }}
+      >
+        <Tab.Screen
+          name="Home"
+          component={HomeNavigator}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <IconBox
+                focused={focused}
+                color={focused ? 'primary' : 'gray'}
+                name="home-outline"
+              />
+            )
+          }}
+        />
+
+        <Tab.Screen
+          name="Map"
+          component={HomeNavigator}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <IconBox
+                focused={focused}
+                color={focused ? 'primary' : 'gray'}
+                name="map-outline"
+              />
+            )
+          }}
+        />
+
+        <Tab.Screen
+          name="News"
+          component={HomeNavigator}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <IconBox
+                focused={focused}
+                color={focused ? 'primary' : 'gray'}
+                name="newspaper-outline"
+              />
+            )
+          }}
+        />
+
+        <Tab.Screen
+          name="Favourites"
+          component={HomeNavigator}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <IconBox
+                focused={focused}
+                color={focused ? 'primary' : 'gray'}
+                name="heart-outline"
+              />
+            )
+          }}
+        />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };
