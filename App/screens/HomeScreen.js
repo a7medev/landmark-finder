@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import IconBox from '../components/IconBox';
 
-import Typo from '../components/Typo';
+import IconBox from '../components/IconBox';
+import Search from '../components/Search';
 import Spacing from '../theme/Spacing';
+import Typo from '../components/Typo';
 
 const HomeScreen = () => {
   return (
@@ -17,6 +18,8 @@ const HomeScreen = () => {
 
         <IconBox name="map-outline" />
       </View>
+
+      <Search />
     </SafeAreaView>
   );
 };
@@ -27,7 +30,8 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    marginBottom: 20
   }
 });
 
